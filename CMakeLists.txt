@@ -20,6 +20,7 @@ add_executable(hello_gpu_collapse hello_gpu_collapse.cpp)
 
 # Link OpenMP
 target_link_libraries(hello_gpu_collapse OpenMP::OpenMP_CXX)
+set_target_properties(hello_gpu_collapse PROPERTIES LINK_FLAGS "-mp=gpu -fast")
 
 # Set compilation flags using target_compile_options
 target_compile_options(hello_gpu_collapse PUBLIC -mp=gpu -fast)
